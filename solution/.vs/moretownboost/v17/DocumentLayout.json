@@ -49,7 +49,8 @@
               "RelativeToolTip": "..\\SubModule.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-02T01:21:23.902Z"
+              "WhenOpened": "2026-01-02T01:21:23.902Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -59,7 +60,7 @@
               "RelativeDocumentMoniker": "..\\moretownboostmodel.cs",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\moretownboost\\moretownboostmodel.cs",
               "RelativeToolTip": "..\\moretownboostmodel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAA5wAwAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-02T01:21:03.91Z",
               "EditorCaption": ""
@@ -72,9 +73,10 @@
               "RelativeDocumentMoniker": "..\\moretownboostbehavior.cs",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\moretownboost\\moretownboostbehavior.cs",
               "RelativeToolTip": "..\\moretownboostbehavior.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-02T01:21:02.888Z"
+              "WhenOpened": "2026-01-02T01:21:02.888Z",
+              "EditorCaption": ""
             }
           ]
         }

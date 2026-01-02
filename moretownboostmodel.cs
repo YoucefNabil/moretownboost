@@ -1,34 +1,44 @@
 ﻿using System;
+using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.CampaignSystem.Settlements;
 
 namespace moretownboost
 {
-    // CHANGE YOUR SETTINGS HERE
     public static class BoostConfig
     {
-        public const int ConstructionRate = 10; // Lower = Faster drain, faster construction. Higher = opposite (Gold / 10)
-        public const float ProductionMultiplier = 0.13f; // Higher = More value out of gold, vanilla is 0.1, 0.13 is a 30% increase from vanilla
-        public const int BaseGameDrain = 500; // The vanilla hardcoded drain amount for towns.
-        public const int CastleBaseDrain = 275; // I really don't know what this is.
+        public const int ConstructionRate = 10;
+        public const float ProductionMultiplier = 0.13f;
+        public const int TownBaseDrain = 500;   // Vanilla Town value
+        public const int CastleBaseDrain = 275; // Vanilla Castle value (Confirmed via Source)
     }
+
     public class moretownboostmodel : DefaultBuildingConstructionModel
     {
+        // We override these so other mods/UI see our "Minimum" costs
+        public override int TownBoostCost => BoostConfig.TownBaseDrain;
+        public override int CastleBoostCost => BoostConfig.CastleBaseDrain;
+
         public override int GetBoostCost(Town town)
         {
-            int gold = town.BoostBuildingProcess;
-            if (gold <= 0) return 0;
-            // Uses the shared config so it matches the behavior perfectly
-            return Math.Max(BoostConfig.BaseGameDrain, gold / BoostConfig.ConstructionRate);
+            if (town.BoostBuildingProcess <= 0) return 0;
+            int baseDrain = town.IsCastle ? BoostConfig.CastleBaseDrain : BoostConfig.TownBaseDrain;
+
+            // Formula: Gold / 10, but never less than the vanilla base
+            return Math.Max(baseDrain, town.BoostBuildingProcess / BoostConfig.ConstructionRate);
         }
+
         public override int GetBoostAmount(Town town)
         {
-            float gold = town.BoostBuildingProcess;
-            // Your logic: ((Gold / Rate) * Multiplier)
-            // Example: (20,000 / 20) * 0.1 = 100 Bonus Construction
-            float boost = (gold / BoostConfig.ConstructionRate) * BoostConfig.ProductionMultiplier;
-            // Ensure we return at least the base 50 if gold is sufficient
-            return (int)Math.Max(50f, boost);
+            if (town.BoostBuildingProcess <= 0) return 0;
+
+            // We calculate based on what the COST will be
+            float currentCost = GetBoostCost(town);
+            float boost = currentCost * BoostConfig.ProductionMultiplier;
+
+            // Base game gives 50 for towns, 20 for castles. We ensure we don't go below that.
+            float minBoost = town.IsCastle ? 20f : 50f;
+            return (int)Math.Max(minBoost, boost);
         }
     }
 }
