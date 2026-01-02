@@ -3,10 +3,10 @@
   "WorkspaceRootPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\moretownboost\\solution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B057162E-359E-4C83-A9FB-AEB66410A813}|..\\moretownboost.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\mount \u0026 blade ii bannerlord\\modules\\moretownboost\\moretownboostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B057162E-359E-4C83-A9FB-AEB66410A813}|..\\moretownboost.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\mount \u0026 blade ii bannerlord\\modules\\moretownboost\\moretownboostbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B057162E-359E-4C83-A9FB-AEB66410A813}|..\\moretownboost.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\mount \u0026 blade ii bannerlord\\modules\\moretownboost\\moretownboostbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B057162E-359E-4C83-A9FB-AEB66410A813}|..\\moretownboost.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\mount \u0026 blade ii bannerlord\\modules\\moretownboost\\moretownboostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B057162E-359E-4C83-A9FB-AEB66410A813}|..\\moretownboost.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\mount \u0026 blade ii bannerlord\\modules\\moretownboost\\submodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -49,31 +49,29 @@
               "RelativeToolTip": "..\\SubModule.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-02T01:21:23.902Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-02T01:21:23.902Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "moretownboostmodel.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\moretownboost\\moretownboostmodel.cs",
               "RelativeDocumentMoniker": "..\\moretownboostmodel.cs",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\moretownboost\\moretownboostmodel.cs",
               "RelativeToolTip": "..\\moretownboostmodel.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAA5wAwAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-02T01:21:03.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-02T01:21:03.91Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "moretownboostbehavior.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\moretownboost\\moretownboostbehavior.cs",
               "RelativeDocumentMoniker": "..\\moretownboostbehavior.cs",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\moretownboost\\moretownboostbehavior.cs",
               "RelativeToolTip": "..\\moretownboostbehavior.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBsAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-02T01:21:02.888Z",
               "EditorCaption": ""

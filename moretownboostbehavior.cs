@@ -16,16 +16,16 @@ namespace moretownboost
 
         private void OnDailyTickTown(Town town)
         {
-            // Engine already took 500. We take the rest.
+            // Towns only trigger here
             ProcessDrain(town, BoostConfig.TownBaseDrain);
         }
 
         private void OnDailyTickSettlement(Settlement settlement)
         {
-            // Engine already took 250 for castles. We take the rest.
+            // Castles only trigger here to prevent double-dipping in Towns
             if (settlement.IsCastle && settlement.Town != null)
             {
-                ProcessDrain(settlement.Town, BoostConfig.CastleBaseDrain);
+                ProcessDrain(settlement.Town, BoostConfig.CastleBaseDrain+25);
             }
         }
 
@@ -33,17 +33,16 @@ namespace moretownboost
         {
             if (town.BoostBuildingProcess > 0)
             {
-                // 1. What was the gold before the engine touched it?
-                int goldBeforeTick = town.BoostBuildingProcess + engineAlreadyTook;
+                // We calculate using floats to match the engine's internal precision
+                float goldBeforeTick = (float)town.BoostBuildingProcess + engineAlreadyTook;
 
-                // 2. What does our Model say the total cost should be?
-                // We calculate it manually here to ensure we use the "BeforeTick" gold
-                int targetTotalCost = Math.Max(engineAlreadyTook, goldBeforeTick / BoostConfig.ConstructionRate);
+                int targetTotalCost = Math.Max(engineAlreadyTook, (int)Math.Floor(goldBeforeTick / BoostConfig.ConstructionRate));
 
-                // 3. Subtract the difference
                 int extraToTake = targetTotalCost - engineAlreadyTook;
                 if (extraToTake > 0)
                 {
+                    // Update the reserve. 
+                    // This happens immediately after the engine takes the base amount.
                     town.BoostBuildingProcess = Math.Max(0, town.BoostBuildingProcess - extraToTake);
                 }
             }
