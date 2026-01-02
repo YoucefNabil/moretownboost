@@ -20,7 +20,7 @@ namespace moretownboost
         {
             // 0.1f is the vanilla value for how much construction you're getting per gold
             // increasing above 0.1 would give you more construction per gold than vanilla.
-            // productionvalue var gives an increase of around 30% compared to vanilla
+            // 0.13 gives an increase of around 30% compared to the vanilla 0.1
             float productionvalue = 0.13f; 
             float gold = town.BoostBuildingProcess;
             return (int)Math.Floor(Math.Max(50f,((gold/constructionrate)*productionvalue)));
