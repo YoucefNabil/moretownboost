@@ -4,26 +4,31 @@ using TaleWorlds.CampaignSystem.Settlements;
 
 namespace moretownboost
 {
+    // CHANGE YOUR SETTINGS HERE
+    public static class BoostConfig
+    {
+        public const int ConstructionRate = 10; // Lower = Faster drain, faster construction. Higher = opposite (Gold / 10)
+        public const float ProductionMultiplier = 0.13f; // Higher = More value out of gold, vanilla is 0.1, 0.13 is a 30% increase from vanilla
+        public const int BaseGameDrain = 500; // The vanilla hardcoded drain amount for towns.
+        public const int CastleBaseDrain = 275; // I really don't know what this is.
+    }
     public class moretownboostmodel : DefaultBuildingConstructionModel
     {
-        //controls how fast your city consumes gold reserve (in vanilla it is capped at 500 as you know)
-        //keep in mind you're still limited by one construction a day (you would waste gold, construction doesnt overflow into the next project)
-        //higher number is slower, lower number is faster.
-        int constructionrate = 8; 
         public override int GetBoostCost(Town town)
         {
-        int gold = town.BoostBuildingProcess;
+            int gold = town.BoostBuildingProcess;
             if (gold <= 0) return 0;
-            return Math.Max(500,gold/constructionrate);
+            // Uses the shared config so it matches the behavior perfectly
+            return Math.Max(BoostConfig.BaseGameDrain, gold / BoostConfig.ConstructionRate);
         }
         public override int GetBoostAmount(Town town)
         {
-            // 0.1f is the vanilla value for how much construction you're getting per gold
-            // increasing above 0.1 would give you more construction per gold than vanilla.
-            // 0.13 gives an increase of around 30% compared to the vanilla 0.1
-            float productionvalue = 0.13f; 
             float gold = town.BoostBuildingProcess;
-            return (int)Math.Floor(Math.Max(50f,((gold/constructionrate)*productionvalue)));
+            // Your logic: ((Gold / Rate) * Multiplier)
+            // Example: (20,000 / 20) * 0.1 = 100 Bonus Construction
+            float boost = (gold / BoostConfig.ConstructionRate) * BoostConfig.ProductionMultiplier;
+            // Ensure we return at least the base 50 if gold is sufficient
+            return (int)Math.Max(50f, boost);
         }
     }
 }
